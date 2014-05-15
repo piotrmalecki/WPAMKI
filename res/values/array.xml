@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="categories">
+        <item>polish</item>
+        <item>rock</item>
+        <item>box office hits</item>
+        <item>michael jacson</item>
+    </array>
+    
+    <array name="Songs0">
+        <item>Nie Płacz Ewka</item>
+        <item>Niepokonani</item>
+    </array>
+    <array name="SongsAuthor0">
+        <item>Nie Płacz Ewka1</item>
+        <item>Perfect</item>
+    </array>
+    <array name="pathkaraoke0">
+        <item>/sdcard/SingSong/nieplaczewaka</item>
+        <item>/sdcard/SingSong/Perfect - Niepokonani (instrumental).mp3</item>
+    </array>
+    <array name="path0">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+    
+     <array name="Songs1">
+        <item>GreenDay</item>
+        <item>Rolling Stones</item>
+    </array>
+     <array name="SongsAuthor1">
+        <item>GreenDay</item>
+        <item>Rolling Stones</item>
+    </array>
+        <array name="pathkaraoke1">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+    <array name="path1">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+        
+   <array name="Songs2">
+        <item>tobecreated</item>
+        <item>as well</item>
+    </array>
+    <array name="SongsAuthor2">
+        <item>tobecreated</item>
+        <item>as well</item>
+    </array>
+        <array name="pathkaraoke2">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+    <array name="path2">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+    
+     <array name="Songs3">
+        <item>tobecreated</item>
+        <item>as well</item>
+    </array>
+    <array name="SongsAuthor3">
+        <item>tobecreated</item>
+        <item>as well</item>
+    </array>
+        <array name="pathkaraoke3">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+    <array name="path3">
+        <item>/sdcard/</item>
+        <item>/sdcard/</item>
+    </array>
+</resources>
