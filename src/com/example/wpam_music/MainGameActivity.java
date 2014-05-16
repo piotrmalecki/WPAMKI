@@ -8,11 +8,13 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -33,6 +35,7 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
 	private Handler mHandler = new Handler();
     private TextView songCurrentDurationLabel;
     private TextView songTotalDurationLabel;
+    private TextView SongInfo;
     private MediaRecorder mRecorder = null;
     private static String mFileName = null;
     
@@ -41,12 +44,13 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game_layout);
 		Context mContext = this.getApplicationContext();
-		
+		index = 0;
 		songCurrentDurationLabel = (TextView) findViewById(R.id.songCurrentDurationLabel);
 	    songTotalDurationLabel = (TextView) findViewById(R.id.songTotalDurationLabel);
 		songProgressBar = (SeekBar) findViewById(R.id.songProgressBar);
+		SongInfo = (TextView) findViewById(R.id.SongInfo);
 		songProgressBar.setOnSeekBarChangeListener(this); // Important
-		index = 0;
+
 		utils = new Utils();
 		onCreateDialog(savedInstanceState).show();
 	}
@@ -57,8 +61,7 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
 		builder.setTitle(R.string.choose_category).setItems(R.array.categories,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
-						// The 'which' argument contains the index position
-						// of the selected item
+
 						chooseCategory(which);
 
 					}
@@ -70,92 +73,19 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
 		// TODO Auto-generated method stub
 		Log.i("MainGameActivity", "Which" + which);
 		
-		songs = initializeSongs(which);
+		songs = Music.initializeSongs(MainGameActivity.this, which);
+		SongInfo.setText(songs.get(index).title + "\n" + songs.get(index).author);
+		SongInfo.setTypeface(null, Typeface.BOLD_ITALIC);
+		SongInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
 	}
 
-	private ArrayList<Song> initializeSongs(int which) {
-		
-		ArrayList<Song> songlist = new ArrayList<Song>();
-		//Song song = new Song();
-		switch (which) {
-		
-		case 0:
-			
-			for (String item : getResources().getStringArray(R.array.Songs0)) {
-				Song song = new Song();
-				song.title = item;
-				songlist.add(song);
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.SongsAuthor0).length; i++) {
-				songlist.get(i).author = getResources().getStringArray(R.array.SongsAuthor0)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = getResources().getStringArray(R.array.path0)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.pathkaraoke0).length; i++) {
-				songlist.get(i).pathWithoutWords = getResources().getStringArray(R.array.pathkaraoke0)[i];
-			}
-			break;
-		case 1:
-			
-			for (String item : getResources().getStringArray(R.array.Songs1)) {
-				Song song = new Song();
-				song.title = item;
-				songlist.add(song);
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.SongsAuthor1).length; i++) {
-				songlist.get(i).author = getResources().getStringArray(R.array.SongsAuthor1)[i];
-			
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = getResources().getStringArray(R.array.path0)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.pathkaraoke1).length; i++) {
-				songlist.get(i).pathWithoutWords = getResources().getStringArray(R.array.pathkaraoke1)[i];
-			}
-			break;
-		case 2:
-			for (String item : getResources().getStringArray(R.array.Songs2)) {
-				Song song = new Song();
-				song.title = item;
-				songlist.add(song);
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.SongsAuthor2).length; i++) {
-				songlist.get(i).author = getResources().getStringArray(R.array.SongsAuthor2)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = getResources().getStringArray(R.array.path0)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.pathkaraoke2).length; i++) {
-				songlist.get(i).pathWithoutWords = getResources().getStringArray(R.array.pathkaraoke2)[i];
-			}
-			break;
-		case 3:
-			for (String item : getResources().getStringArray(R.array.Songs3)) {
-				Song song = new Song();
-				song.title = item;
-				songlist.add(song);
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.SongsAuthor3).length; i++) {
-				songlist.get(i).author = getResources().getStringArray(R.array.SongsAuthor3)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = getResources().getStringArray(R.array.path0)[i];
-			}
-			for (int i=0; i< getResources().getStringArray(R.array.pathkaraoke3).length; i++) {
-				songlist.get(i).pathWithoutWords = getResources().getStringArray(R.array.pathkaraoke3)[i];
-			}
-			break;
-		}
-		return songlist;
-	}
 
 	/** Called startButton the user clicks the highScores button */
 	public void startPressed(View view) {
 		mp = new MediaPlayer();
 		music = new Music(mp);
 		music.play(songs.get(1).pathWithoutWords);
-		startRecording();
+		//startRecording();
 		// Intent intent = new Intent(this, HighScoresActivity.class);
 		// startActivity(intent);
 		songProgressBar.setProgress(0);
@@ -201,12 +131,19 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
 		mp.seekTo(currentPosition);
 		updateProgressBar();
 	}
+  /*  private void onRecord(boolean start) {
+        if (start) {
+            startRecording();
+        } else {
+            stopRecording();
+        }
+    }*/
         
         private void startRecording() {
             mRecorder = new MediaRecorder();
             mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
-            mRecorder.setOutputFile(mFileName + index);
+            mRecorder.setOutputFile(mFileName);
             mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
             try {
@@ -223,7 +160,11 @@ public class MainGameActivity extends Activity implements SeekBar.OnSeekBarChang
             mRecorder.release();
             mRecorder = null;
         }
-    
+     @Override
+    public void onStop(){
+    super.onStop();
+    music.stop();
+    }
 	@Override
     public void onDestroy(){
     super.onDestroy();

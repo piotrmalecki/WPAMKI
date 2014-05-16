@@ -26,44 +26,45 @@
          android:layout_height="wrap_content"
          android:layout_alignTop="@+id/imageView1"
          android:layout_centerHorizontal="true"
-         android:layout_marginTop="18dp"
          android:text="@string/hello_world" />
-
-     <TextView
-         android:id="@+id/songTotalDurationLabel"
-         android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:layout_above="@+id/songProgressBar"
-         android:layout_centerHorizontal="true"
-         android:layout_weight="1"
-         android:gravity="right"
-         android:textColor="#04cbde"
-         android:textStyle="bold" />
 
      <TextView
          android:id="@+id/songCurrentDurationLabel"
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:layout_above="@+id/songProgressBar"
+         android:layout_alignBottom="@+id/startButton"
          android:layout_alignLeft="@+id/imageView1"
          android:layout_weight="1"
          android:gravity="left"
          android:textColor="#eeeeee"
          android:textStyle="bold" />
 
+     <TextView
+         android:id="@+id/songTotalDurationLabel"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/imageView1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="56dp"
+         android:layout_weight="1"
+         android:gravity="right"
+         android:textColor="#04cbde"
+         android:textStyle="bold" />
+
      <SeekBar
          android:id="@+id/songProgressBar"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/imageView1"
          android:layout_alignLeft="@+id/songTotalDurationLabel"
-         android:layout_below="@+id/imageView1" />
+         android:layout_marginBottom="20dp" />
 
      <Button
          android:id="@+id/startButton"
          style="@style/ButtonText"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignBottom="@+id/imageView1"
+         android:layout_alignBottom="@+id/songTotalDurationLabel"
          android:layout_centerHorizontal="true"
          android:background="@drawable/custom_button"
          android:onClick="startPressed"
