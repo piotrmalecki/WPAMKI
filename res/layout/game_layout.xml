@@ -70,4 +70,13 @@
          android:onClick="startPressed"
          android:text="Start" />
 
+     <Button
+         android:id="@+id/button1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/songProgressBar"
+         android:layout_toRightOf="@+id/SongInfo"
+         android:onClick="fingreprint"
+         android:text="Button" />
+
 </RelativeLayout>

@@ -24,8 +24,7 @@ public class Music  {
 			FileInputStream fis = new FileInputStream(path);
 			mediaplayer.setDataSource(fis.getFD());
 			mediaplayer.prepare();
-			mediaplayer.start();
-			
+			mediaplayer.start();			
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
@@ -71,6 +70,9 @@ public static ArrayList<Song> initializeSongs(Context res, int which) {
 			for (int i=0; i< res.getResources().getStringArray(R.array.pathkaraoke0).length; i++) {
 				songlist.get(i).pathWithoutWords = res.getResources().getStringArray(R.array.pathkaraoke0)[i];
 			}
+			for (int i=0; i< res.getResources().getStringArray(R.array.totalDuration0).length; i++) {
+				songlist.get(i).totalDuration = res.getResources().getStringArray(R.array.totalDuration0)[i];
+			}
 			break;
 		case 1:
 			
@@ -83,11 +85,14 @@ public static ArrayList<Song> initializeSongs(Context res, int which) {
 				songlist.get(i).author = res.getResources().getStringArray(R.array.SongsAuthor1)[i];
 			
 			}
-			for (int i=0; i< res.getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = res.getResources().getStringArray(R.array.path0)[i];
+			for (int i=0; i< res.getResources().getStringArray(R.array.path1).length; i++) {
+				songlist.get(i).path = res.getResources().getStringArray(R.array.path1)[i];
 			}
 			for (int i=0; i< res.getResources().getStringArray(R.array.pathkaraoke1).length; i++) {
 				songlist.get(i).pathWithoutWords = res.getResources().getStringArray(R.array.pathkaraoke1)[i];
+			}
+			for (int i=0; i< res.getResources().getStringArray(R.array.totalDuration1).length; i++) {
+				songlist.get(i).totalDuration = res.getResources().getStringArray(R.array.totalDuration1)[i];
 			}
 			break;
 		case 2:
@@ -99,11 +104,14 @@ public static ArrayList<Song> initializeSongs(Context res, int which) {
 			for (int i=0; i< res.getResources().getStringArray(R.array.SongsAuthor2).length; i++) {
 				songlist.get(i).author = res.getResources().getStringArray(R.array.SongsAuthor2)[i];
 			}
-			for (int i=0; i< res.getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = res.getResources().getStringArray(R.array.path0)[i];
+			for (int i=0; i< res.getResources().getStringArray(R.array.path2).length; i++) {
+				songlist.get(i).path = res.getResources().getStringArray(R.array.path2)[i];
 			}
 			for (int i=0; i< res.getResources().getStringArray(R.array.pathkaraoke2).length; i++) {
 				songlist.get(i).pathWithoutWords = res.getResources().getStringArray(R.array.pathkaraoke2)[i];
+			}
+			for (int i=0; i< res.getResources().getStringArray(R.array.totalDuration2).length; i++) {
+				songlist.get(i).totalDuration = res.getResources().getStringArray(R.array.totalDuration2)[i];
 			}
 			break;
 		case 3:
@@ -115,11 +123,14 @@ public static ArrayList<Song> initializeSongs(Context res, int which) {
 			for (int i=0; i< res.getResources().getStringArray(R.array.SongsAuthor3).length; i++) {
 				songlist.get(i).author = res.getResources().getStringArray(R.array.SongsAuthor3)[i];
 			}
-			for (int i=0; i< res.getResources().getStringArray(R.array.path0).length; i++) {
-				songlist.get(i).path = res.getResources().getStringArray(R.array.path0)[i];
+			for (int i=0; i< res.getResources().getStringArray(R.array.path3).length; i++) {
+				songlist.get(i).path = res.getResources().getStringArray(R.array.path3)[i];
 			}
 			for (int i=0; i< res.getResources().getStringArray(R.array.pathkaraoke3).length; i++) {
 				songlist.get(i).pathWithoutWords = res.getResources().getStringArray(R.array.pathkaraoke3)[i];
+			}
+			for (int i=0; i< res.getResources().getStringArray(R.array.totalDuration3).length; i++) {
+				songlist.get(i).totalDuration = res.getResources().getStringArray(R.array.totalDuration3)[i];
 			}
 			break;
 		}

@@ -10,22 +10,26 @@ package com.example.wpam_music;
 public final class R {
     public static final class array {
         public static final int Songs0=0x7f040001;
-        public static final int Songs1=0x7f040005;
-        public static final int Songs2=0x7f040009;
-        public static final int Songs3=0x7f04000d;
+        public static final int Songs1=0x7f040006;
+        public static final int Songs2=0x7f04000b;
+        public static final int Songs3=0x7f040010;
         public static final int SongsAuthor0=0x7f040002;
-        public static final int SongsAuthor1=0x7f040006;
-        public static final int SongsAuthor2=0x7f04000a;
-        public static final int SongsAuthor3=0x7f04000e;
+        public static final int SongsAuthor1=0x7f040007;
+        public static final int SongsAuthor2=0x7f04000c;
+        public static final int SongsAuthor3=0x7f040011;
         public static final int categories=0x7f040000;
         public static final int path0=0x7f040004;
-        public static final int path1=0x7f040008;
-        public static final int path2=0x7f04000c;
-        public static final int path3=0x7f040010;
+        public static final int path1=0x7f040009;
+        public static final int path2=0x7f04000e;
+        public static final int path3=0x7f040013;
         public static final int pathkaraoke0=0x7f040003;
-        public static final int pathkaraoke1=0x7f040007;
-        public static final int pathkaraoke2=0x7f04000b;
-        public static final int pathkaraoke3=0x7f04000f;
+        public static final int pathkaraoke1=0x7f040008;
+        public static final int pathkaraoke2=0x7f04000d;
+        public static final int pathkaraoke3=0x7f040012;
+        public static final int totalDuration0=0x7f040005;
+        public static final int totalDuration1=0x7f04000a;
+        public static final int totalDuration2=0x7f04000f;
+        public static final int totalDuration3=0x7f040014;
     }
     public static final class attr {
     }
@@ -54,11 +58,12 @@ public final class R {
     }
     public static final class id {
         public static final int SongInfo=0x7f090006;
-        public static final int action_settings=0x7f09000a;
+        public static final int action_settings=0x7f09000b;
         public static final int button02=0x7f090001;
         public static final int button03=0x7f090003;
         public static final int button1=0x7f090002;
         public static final int imageView1=0x7f090004;
+        public static final int listview=0x7f09000a;
         public static final int songCurrentDurationLabel=0x7f090007;
         public static final int songProgressBar=0x7f090005;
         public static final int songTotalDurationLabel=0x7f090009;

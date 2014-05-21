@@ -9,6 +9,7 @@ public class Song {
 	public String path;
 	public String pathWithoutWords;
 	public bool result;
+	public String totalDuration;
 	public void LoadSongs() {
 	}
 }
